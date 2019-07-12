@@ -7,16 +7,16 @@
 				</div>
 
                 <div class="flex flex-col justify-center md:justify-start my-auto pt-8 md:pt-0 px-8 md:px-24 lg:px-32">
-                    <p class="text-center text-3xl">{{ $t('login.title') }}.</p>
+                    <p class="text-center text-3xl">{{ $t('auth.login') }}.</p>
                     <form class="flex flex-col pt-3 md:pt-8" action="#" method="POST">
 
                         <div class="flex flex-col pt-4">
-                            <label for="email" class="text-lg">{{ $t('fields.email') }}</label>
+                            <label for="email" class="text-lg">{{ $t('auth.email') }}</label>
                             <input type="text" v-model="loginData.email" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mt-1 leading-tight focus:outline-none focus:shadow-outline" :class="{ 'border-pink-400': errors.email }">
                         </div>
 
                         <div class="flex flex-col pt-4">
-                            <label for="password" class="text-lg">{{ $t('fields.password') }}</label>
+                            <label for="password" class="text-lg">{{ $t('auth.password') }}</label>
                             <input type="password" v-model="loginData.password" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mt-1 leading-tight focus:outline-none focus:shadow-outline" :class="{ 'border-pink-400': errors.password }">
                         </div>
         
@@ -24,7 +24,7 @@
                     </form>
 
 					<div class="text-center pt-12 pb-12">
-						<p>{{ $t('login.create_acc_info') }} <router-link :to="{ name: 'register' }" class="underline font-semibold">{{ $t('create_one') }}</router-link>.</p>
+						<p>{{ $t('auth.create_acc_info') }} <router-link :to="{ name: 'register' }" class="underline font-semibold">{{ $t('general.create_one') }}</router-link>.</p>
 					</div>
                 </div>
             </div>
@@ -40,7 +40,7 @@
 export default {
 	metaInfo: function() {
 		return {
-			title: this.$t('login.title'),
+			title: this.$t('auth.login'),
 		}
 	},
 	data() {
@@ -98,7 +98,7 @@ export default {
 				}
 
 				self.$notice['error']({
-					title: self.$t('error'),
+					title: self.$t('general.error'),
 					description: String(errors)
 				})
 			})

@@ -11,7 +11,7 @@
                 <div v-show="isOpen" class="absolute w-32 bg-white rounded-lg shadow-lg py-2 mt-16" style="display: none;">
                     <a href="#" class="block px-4 py-2 account-link hover:text-white">{{ $t('navbar.other_menu') }}</a>
                     <a href="#" class="block px-4 py-2 account-link hover:text-white">{{ $t('navbar.other_menu') }}</a>
-                    <a href="#" class="block px-4 py-2 account-link hover:text-white" @click="logout">{{ $t('logout.title') }}</a>
+                    <a href="#" class="block px-4 py-2 account-link hover:text-white" @click="logout">{{ $t('general.logout') }}</a>
                 </div>
             </div>
         </header>
@@ -61,7 +61,7 @@
                     {{ $t('navbar.other_menu') }}
                 </a>
                 <button class="w-full bg-white cta-btn font-semibold py-2 mt-3 rounded-lg shadow-lg hover:shadow-xl hover:bg-gray-300 flex items-center justify-center">
-                    <i class="fas fa-sign-out-alt mr-3"></i> {{ $t('logout.title') }}
+                    <i class="fas fa-sign-out-alt mr-3"></i> {{ $t('general.logout') }}
                 </button>
             </nav>
         </header>

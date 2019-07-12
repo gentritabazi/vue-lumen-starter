@@ -9,7 +9,7 @@
                 <main class="w-full flex-grow p-6">
                     <slot></slot>
                 </main>
-                <footer class="w-full bg-white text-right p-4">{{ $t('copyright') }}  © {{ new Date().getFullYear() }}.</footer>
+                <footer class="w-full bg-white text-right p-4">{{ $t('general.copyright') }}  © {{ new Date().getFullYear() }}.</footer>
             </div>
         </div>
     </div>

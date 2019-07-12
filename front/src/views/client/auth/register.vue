@@ -7,28 +7,28 @@
 				</div>
 
 				<div class="flex flex-col justify-center md:justify-start my-auto pt-8 md:pt-0 px-8 md:px-24 lg:px-32">
-					<p class="text-center text-3xl">{{ $t('register.title') }}.</p>
+					<p class="text-center text-3xl">{{ $t('auth.register') }}.</p>
 					<form class="flex flex-col pt-3 md:pt-8" onsubmit="event.preventDefault();">
 						<div class="flex flex-col pt-4">
-							<label for="name" class="text-lg">{{ $t('fields.first_name') }}</label>
+							<label for="name" class="text-lg">{{ $t('auth.first_name') }}</label>
 							<input type="text" id="name" v-model="registerData.first_name"
 							:class="{ 'border-pink-400': errors.first_name }" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mt-1 leading-tight focus:outline-none focus:shadow-outline">
 						</div>
 
 						<div class="flex flex-col pt-4">
-							<label for="name" class="text-lg">{{ $t('fields.last_name') }}</label>
+							<label for="name" class="text-lg">{{ $t('auth.last_name') }}</label>
 							<input type="text" id="name" v-model="registerData.last_name"
 							:class="{ 'border-pink-400': errors.last_name }" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mt-1 leading-tight focus:outline-none focus:shadow-outline">
 						</div>
 
 						<div class="flex flex-col pt-4">
-							<label for="email" class="text-lg">{{ $t('fields.email') }}</label>
+							<label for="email" class="text-lg">{{ $t('auth.email') }}</label>
 							<input type="email" id="email" v-model="registerData.email"
 							:class="{ 'border-pink-400': errors.email }" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mt-1 leading-tight focus:outline-none focus:shadow-outline">
 						</div>
 
 						<div class="flex flex-col pt-4">
-							<label for="password" class="text-lg">{{ $t('fields.password') }}</label>
+							<label for="password" class="text-lg">{{ $t('auth.password') }}</label>
 							<input type="password" id="password" v-model="registerData.password"
 							:class="{ 'border-pink-400': errors.password }" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mt-1 leading-tight focus:outline-none focus:shadow-outline">
 						</div>
@@ -37,7 +37,7 @@
 					</form>
 
 					<div class="text-center pt-12 pb-12">
-						<p>{{ $t('register.login_info') }} <router-link class="underline font-semibold" :to="{ name: 'login' }">{{ $t('login.title') }}</router-link>.</p>
+						<p>{{ $t('auth.login_info') }} <router-link class="underline font-semibold" :to="{ name: 'login' }">{{ $t('auth.login') }}</router-link>.</p>
 					</div>
 				</div>
 			</div>
@@ -53,7 +53,7 @@
 export default {
 	metaInfo: function() {
 		return {
-			title: this.$t('register.title'),
+			title: this.$t('auth.register'),
 		}
     },
     data() {
