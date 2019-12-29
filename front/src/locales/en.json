@@ -1,0 +1,60 @@
+{
+    "success": "Success",
+    "error": "Error",
+    "email": "E-Mail Address",
+    "password": "Password",
+    "forgot_password": "Forgot Password",
+    "reset_password": "Reset Password",
+    "reset_password_info": "By clicking 'Reset Password' we will send a password reset link",
+    "copyright": "Copyright",
+    "create_one": "Create One",
+    "first_name": "First Name",
+    "last_name": "Last Name",
+    "something_wrong": "Something is going wrong !",
+    "process_success": "The process was successfully completed.",
+    "cancel": "Cancel",
+    "ok": "Ok",
+    "by": "By",
+
+    "validation": {
+        "email": {
+            "required": "The email field is required.",
+            "unique": "The email has already been taken.",
+            "email": "The email must be a valid email address."
+        },
+        "password": {
+            "required": "The password field is required.",
+            "between": "The password must be between 6 and 255 characters."
+        },
+        "first_name": {
+            "required": "The first name field is required.",
+            "between": "The first name must be between 1 and 20 characters."
+        },
+        "last_name": {
+            "required": "The last name field is required.",
+            "between": "The last name must be between 1 and 20 characters."
+        }
+    },
+
+    "login": {
+        "title": "Login",
+        "failed": "These credentials do not match our records.",
+        "create_acc_info": "Don't have an account?"
+    },
+
+    "register": {
+        "title": "Register",
+        "login_info": "Already have an account?"
+    },
+
+    "credits": {
+        "title": "Credits",
+        "thanks_title": "Thanks To ...",
+        "thanks_info": "We would like to thanks the makers of some cool plugins."
+    },
+
+    "logout": {
+        "title": "Logout",
+        "info": "Are you sure you want to leave page ?"
+    }
+}

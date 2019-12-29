@@ -1,0 +1,10 @@
+/* Modal */
+.modal {
+    background: #00000040;
+    display: block;
+}
+
+/* BreadCrumb */
+.breadcrumb-item div {
+    display: inline-block;
+}
