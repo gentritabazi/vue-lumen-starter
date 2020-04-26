@@ -37,14 +37,11 @@ export default {
                     name: "Admin Template",
                     link: "https://github.com/stisla/stisla",
                     author: "Muhamad Nauval Azhar"
-                }, {
+                },
+                {
                     name: "Login Page",
                     link: "https://github.com/nauvalazhar/bootstrap-4-login-page",
                     author: "Muhamad Nauval Azhar"
-                }, {
-                    name: "Bootstrap",
-                    link: "https://github.com/twbs/bootstrap",
-                    author: "Mark Otto & Jacob Thornton"
                 },
                 {
                     name: "VueJs Notice",
