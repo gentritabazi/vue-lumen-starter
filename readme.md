@@ -24,7 +24,7 @@
 * Multiple Language System
 * Auth / Guest Middleware (FrontEnd & BackEnd)
 * Authentication with JWT
-* Support Form Request Validation
+* Validation (FrontEnd & BackEnd)
 * Admin Panel (Stisla - https://github.com/stisla/stisla)
 
 ### Installation
