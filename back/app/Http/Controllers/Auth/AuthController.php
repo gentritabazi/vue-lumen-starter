@@ -84,14 +84,4 @@ class AuthController extends Controller
         // Final Response
         return response()->json(['message' => 'process_success'], 201);
     }
-
-    /**
-     * Get info from authenticated user.
-     *
-     * @param Request $request
-     * @return JSON
-     */
-    public function userInfo() {
-        return Auth::guard('api')->user();
-    }
 }
