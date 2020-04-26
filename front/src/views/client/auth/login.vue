@@ -3,13 +3,13 @@
 		<h4 class="card-title">{{ $t('login.title') }}</h4>
 		<form class="my-login-validation">
 			<div class="form-group">
-				<label>{{ $t('email') }}</label>
+				<label>{{ $t('fields.email') }}</label>
 				<input type="email" class="form-control" v-model="loginData.email" v-bind:class="{ 'border border-danger': errors.email }" autocomplete="on">
 			</div>
 
 			<div class="form-group">
-				<label>{{ $t('password') }}
-					<router-link :to="{ name: 'forgotPassword' }" class="float-right">{{ $t('forgot_password') }} ?</router-link>
+				<label>{{ $t('fields.password') }}
+					<router-link :to="{ name: 'forgotPassword' }" class="float-right">{{ $t('forgot_password.title') }} ?</router-link>
 				</label>
 				<input type="password" class="form-control" v-model="loginData.password" v-bind:class="{ 'border border-danger': errors.password }">
 			</div>
@@ -75,7 +75,7 @@ export default {
                             }
 
 							for(var i = 0; i < error.response.data.errors[errorKey].length; i++) {
-								errors += self.$t(String(error.response.data.errors[errorKey][i])) + '<br>'
+								errors += (String(error.response.data.errors[errorKey][i])) + '<br>'
 							}
 						}
 					}

@@ -3,22 +3,22 @@
 		<h4 class="card-title">{{ $t('register.title') }}</h4>
 		<form class="my-login-validation">
 			<div class="form-group">
-				<label>{{ $t('first_name') }}</label>
+				<label>{{ $t('fields.first_name') }}</label>
 				<input type="text" class="form-control" v-model="registerData.first_name" v-bind:class="{ 'border border-danger': errors.first_name }">
 			</div>
 
 			<div class="form-group">
-				<label>{{ $t('last_name') }}</label>
+				<label>{{ $t('fields.last_name') }}</label>
 				<input type="text" class="form-control" v-model="registerData.last_name" v-bind:class="{ 'border border-danger': errors.last_name }">
 			</div>
 
 			<div class="form-group">
-				<label>{{ $t('email') }}</label>
+				<label>{{ $t('fields.email') }}</label>
 				<input type="email" class="form-control" v-model="registerData.email" v-bind:class="{ 'border border-danger': errors.email }">
 			</div>
 
 			<div class="form-group">
-				<label>{{ $t('password') }}</label>
+				<label>{{ $t('fields.password') }}</label>
 				<input type="password" class="form-control" v-model="registerData.password" v-bind:class="{ 'border border-danger': errors.password }">
 			</div>
 
@@ -90,7 +90,7 @@ export default {
                             }
 
 							for(var i = 0; i < error.response.data.errors[errorKey].length; i++) {
-								errors += self.$t(String(error.response.data.errors[errorKey][i])) + '<br>'
+								errors += (String(error.response.data.errors[errorKey][i])) + '<br>'
 							}
 						}
                     }

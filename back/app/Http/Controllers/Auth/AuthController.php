@@ -24,11 +24,7 @@ class AuthController extends Controller
             'email' => 'required',
             'password' => 'required',
         );
-        $messages = array(
-            'email.required' => 'validation.email.required',
-            'password.required' => 'validation.password.required',
-        );
-        $validator = Validator::make($request->all(), $rules, $messages);
+        $validator = Validator::make($request->all(), $rules);
         if($validator->fails()) {
             return response()->json(['errors' => $validator->errors()], 422); 
         }
@@ -36,7 +32,7 @@ class AuthController extends Controller
         // Check
         $credentials = $request->only(['email', 'password']);
         if(!$token = Auth::attempt($credentials)) {
-            return response()->json(['errors' => ['login' => ['login.failed']]], 422);
+            return response()->json(['errors' => ['login' => [__('auth.failed')]]], 422);
         }
 
         // Final Response
@@ -57,18 +53,7 @@ class AuthController extends Controller
             'email' => 'required|unique:users,email|email',
             'password' => 'required|between:6,255',
         );
-        $messages = array(
-            'first_name.required' => 'validation.first_name.required',
-            'first_name.between' => 'validation.first_name.between',
-            'last_name.required' => 'validation.last_name.required',
-            'last_name.between' => 'validation.last_name.between',
-            'email.required' => 'validation.email.required',
-            'email.unique' => 'validation.email.unique',
-            'email.email' => 'validation.email.email',
-            'password.required' => 'validation.password.required',
-            'password.between' => 'validation.password.between',
-        );
-        $validator = Validator::make($request->all(), $rules, $messages);
+        $validator = Validator::make($request->all(), $rules);
         if($validator->fails()) {
             return response()->json(['errors' => $validator->errors()], 422); 
         }
@@ -82,6 +67,6 @@ class AuthController extends Controller
         $user->save();
 
         // Final Response
-        return response()->json(['message' => 'process_success'], 201);
+        return response()->json(['message' => __('general_words.process_success')], 201);
     }
 }
