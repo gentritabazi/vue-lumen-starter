@@ -6,6 +6,7 @@
     "type": "project",
     "require": {
         "php": "^7.2.5",
+        "fruitcake/laravel-cors": "^1.0",
         "laravel/lumen-framework": "^7.0",
         "tymon/jwt-auth": "dev-develop"
     },

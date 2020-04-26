@@ -23,6 +23,7 @@
 * Logout
 * Multiple Language System
 * Auth / Guest Middleware (FrontEnd & BackEnd)
+* Cors Middleware (https://github.com/fruitcake/laravel-cors)
 * Authentication with JWT
 * Validation (FrontEnd & BackEnd)
 * Admin Panel (Stisla - https://github.com/stisla/stisla)
