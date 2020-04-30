@@ -13,7 +13,7 @@
     "bootstrap": "^4.4.1",
     "core-js": "^3.4.3",
     "crip-vue-notice": "^1.1.1",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "js-cookie": "^2.2.1",
     "popper.js": "^1.16.0",
     "vue": "^2.6.10",
