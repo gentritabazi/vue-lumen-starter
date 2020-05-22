@@ -18,25 +18,31 @@ class AuthController extends Controller
      * @param Request $request
      * @return JSON
      */
-    public function login(Request $request) {
+    public function login(Request $request)
+    {
         // Validate
         $rules = array(
             'email' => 'required',
             'password' => 'required',
         );
         $validator = Validator::make($request->all(), $rules);
-        if($validator->fails()) {
-            return response()->json(['errors' => $validator->errors()], 422); 
+        if ($validator->fails()) {
+            return response()->json(['errors' => $validator->errors()], 422);
         }
 
         // Check
         $credentials = $request->only(['email', 'password']);
-        if(!$token = Auth::attempt($credentials)) {
+        if (!$token = Auth::attempt($credentials)) {
             return response()->json(['errors' => ['login' => [__('auth.failed')]]], 422);
         }
 
         // Final Response
-        return $this->respondWithToken($token);
+        return response()->json([
+            'user' => Auth::user(),
+            'token' => $token,
+            'token_type' => 'bearer',
+            'expires_in' => Auth::factory()->getTTL() * 60
+        ], 200);
     }
 
     /**
@@ -45,7 +51,8 @@ class AuthController extends Controller
      * @param Request $request
      * @return JSON
      */
-    public function register(Request $request) {
+    public function register(Request $request)
+    {
         // Validate
         $rules = array(
             'first_name' => 'required|between:1,20',
@@ -54,8 +61,8 @@ class AuthController extends Controller
             'password' => 'required|between:6,255',
         );
         $validator = Validator::make($request->all(), $rules);
-        if($validator->fails()) {
-            return response()->json(['errors' => $validator->errors()], 422); 
+        if ($validator->fails()) {
+            return response()->json(['errors' => $validator->errors()], 422);
         }
 
         // Save to DB
