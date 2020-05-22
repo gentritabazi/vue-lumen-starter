@@ -15,19 +15,18 @@ const router = new VueRouter({
 router.beforeEach((to, from, next) => {
     // Auth
     if(to.meta.auth) {
-        if(store.state.isLogged) {
-            next()
-            return
-        }
-        return next('/login')
+        if(store.getters.isLogged)
+            return next()
+        else
+            return router.push({ name: 'login' })
     }
 
     // Guest
     if(to.meta.guest) {
-        if(store.state.isLogged) {
-            return next('/admin/dashboard')            
-        }
-        next()
+        if(store.getters.isLogged)
+            return router.push({ name: 'adminDashboard' })
+        else
+            return next()
     }
     
     next()

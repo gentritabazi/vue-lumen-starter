@@ -57,9 +57,6 @@ export default {
             this.showLogoutModal = !this.showLogoutModal
         },
         logout: function() {
-            localStorage.removeItem('token')
-            localStorage.removeItem('user_id')
-            localStorage.removeItem('user_name')
             this.$store.commit('LOGOUT_USER')
             this.$router.push({ name: 'login' })
         }

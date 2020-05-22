@@ -22,9 +22,8 @@ Vue.prototype.$appName = process.env.VUE_APP_NAME
 Vue.mixin(generalFunc)
 Vue.use(CripNotice)
 Vue.use(VueMeta)
-const token = localStorage.getItem('token')
-if(token) {
-    axios.defaults.headers.common['Authorization'] = 'Bearer ' + token
+if(store.getters.isLogged) {
+    axios.defaults.headers.common['Authorization'] = 'Bearer ' + store.state.token
 }
 Vue.prototype.$http = axios
 

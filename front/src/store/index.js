@@ -4,20 +4,34 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 
 const state = {
-    isLogged: !!localStorage.getItem('token')
+    token: localStorage.getItem('token'),
+}
+
+const getters = {
+    isLogged: state => !!state.token
 }
 
 const mutations = {
-    LOGIN_USER(state) {
-        state.isLogged = true
+    LOGIN_USER(state, response) {
+        var token = response.data.token
+
+        localStorage.setItem('token', token)
+        localStorage.setItem('user', JSON.stringify(response.data.user))
+
+        state.token = token
+        Vue.prototype.$http.defaults.headers.common['Authorization'] = 'Bearer ' + token
     },
     
     LOGOUT_USER(state) {
-        state.isLogged = false
+        localStorage.removeItem('token')
+        localStorage.removeItem('user')
+        
+        state.token = null
     }
 }
 
 export default new Vuex.Store({
     state,
-    mutations
+    mutations,
+    getters
 })

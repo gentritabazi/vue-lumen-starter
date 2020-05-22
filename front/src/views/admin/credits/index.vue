@@ -50,6 +50,14 @@ export default {
                 }
             ]
         }
+    },
+    created() {
+        // Test Ajax Request
+        this.$http.get(this.$backendUrl + 'hello-world')
+        .then(function(response) {
+            console.log(response)
+        })
+        .catch(function(error) { console.log(error) })
     }
 }
 </script>

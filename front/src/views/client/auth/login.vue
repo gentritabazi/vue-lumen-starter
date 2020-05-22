@@ -54,11 +54,8 @@ export default {
 			// Ajax Request
 			this.$http.post(this.$backendUrl + 'login', self.loginData)
 			.then(function(response) {
-				// Save token
-				localStorage.setItem('user_id', response.data.user_id)
-				localStorage.setItem('user_name', response.data.user_name)
-				localStorage.setItem('token', response.data.token)
-				self.$store.commit('LOGIN_USER')
+				// Save data
+				self.$store.commit('LOGIN_USER', response)
 
 				// Redirect				
 				self.$router.push({ name: 'adminDashboard' })
