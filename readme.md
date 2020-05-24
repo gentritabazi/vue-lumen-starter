@@ -2,9 +2,8 @@
 **Vue Lumen Starter** offers to you to connect to the **Lumen (PHP Micro-Framework By Laravel)** through the api using **Vue.js**.
 
 ### Screenshots
-![Screenshot](https://i.imgur.com/LLRtNRj.png)
-![Screenshot](https://i.imgur.com/dFWsBR1.png)
-![Screenshot](https://i.imgur.com/arf0oPV.png)
+![Screenshot](https://i.imgur.com/TQFdYNI.png)
+![Screenshot](https://i.imgur.com/lxm7F5M.png)
 
 ### Included
  * Vue Router
