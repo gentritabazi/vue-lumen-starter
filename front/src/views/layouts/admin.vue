@@ -25,7 +25,7 @@ import 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'srcFolder/assets/css/admin/index.css'
 import 'srcFolder/assets/css/admin/custom.css'
-import 'srcFolder/assets/css/fontawesome-5-9-0/css/index.css'
+import '@fortawesome/fontawesome-free/css/all.min.css'
 
 // Components
 import sidebar from 'srcFolder/components/admin/sidebar'

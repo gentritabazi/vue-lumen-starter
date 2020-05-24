@@ -28,6 +28,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import 'srcFolder/assets/css/admin/index.css'
 import 'srcFolder/assets/css/admin/custom.css'
 import 'srcFolder/assets/css/auth/index.css'
+import '@fortawesome/fontawesome-free/css/all.min.css'
 
 var d = new Date();
 export default {
