@@ -18,8 +18,6 @@ $router->post('login', 'Auth\AuthController@login');
 $router->post('register', 'Auth\AuthController@register');
 
 // Hello World
-$router->group(['middleware' => 'auth'], function () use ($router) {
-    $router->get('hello-world', function () {
-        return 'hello world';
-    });
+$router->get('hello-world', ['middleware' => 'auth'], function () {
+    return 'hello world';
 });
