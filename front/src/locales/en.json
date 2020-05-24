@@ -1,11 +1,8 @@
 {
     "success": "Success",
-    "error": "Error",  
-    "cancel": "Cancel",
-    "ok": "Ok",
-    "by": "By",
-    "create_one": "Create One",
+    "error": "Error",
     "copyright": "Copyright",
+    "create_one": "Create one",
 
     "fields": {
         "first_name": "First Name",
@@ -24,10 +21,9 @@
         "login_info": "Already have an account?"
     },
 
-    "credits": {
-        "title": "Credits",
-        "thanks_title": "Thanks To ...",
-        "thanks_info": "We would like to thanks the makers of some cool plugins."
+    "navbar": {
+        "dashboard": "Dashboard",
+        "other_menu": "Other Menu"
     },
 
     "logout": {
@@ -35,9 +31,10 @@
         "info": "Are you sure you want to leave page ?"
     },
 
-    "forgot_password": {
-        "title": "Forgot Password",
-        "reset_password": "Reset Password",
-        "reset_password_info": "By clicking 'Reset Password' we will send a password reset link"
-    }   
+    "errors": {
+        "404": {
+            "title": "Oops! Nothing was found",
+            "body": "The page you are looking for might have been removed had its name changed or is temporarily unavailable."
+        }
+    }
 }

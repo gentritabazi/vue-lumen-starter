@@ -7,16 +7,15 @@
 ![Screenshot](https://i.imgur.com/arf0oPV.png)
 
 ### Included
- * Vue
  * Vue Router
  * Vuex
  * Axios
- * Bootstrap
  * Vue CripNotice
  * Vue I18n
- * VueMeta
+ * Vue Meta
+ * Tailwind
  * Font Awesome 5
- 
+
 ### Features
 * Signup
 * Login
@@ -26,7 +25,7 @@
 * Cors Middleware (https://github.com/fruitcake/laravel-cors)
 * Authentication with JWT
 * Validation (FrontEnd & BackEnd)
-* Admin Panel (Stisla - https://github.com/stisla/stisla)
+* Tailwind Admin / Auth Templates
 
 ### Installation
 * Clone the repo: ``git clone https://github.com/gentritabazi01/Vue-Lumen-Starter.git`` to your local path.
@@ -37,6 +36,10 @@
 * Navigate to {PROJECT-PATH}/front  and Run ``copy .env.example .env``.
 * Run: ``npm install``.
 * Run: ``npm run serve``.
+
+### Credits
+* Tailwind Admin Template (https://github.com/davidgrzyb/tailwind-admin-template)
+* Tailwind Login & Register Template (https://github.com/davidgrzyb/tailwind-auth-template)
 
 ### Author
 * Name: **Gentrit Abazi**

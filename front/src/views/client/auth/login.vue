@@ -1,25 +1,38 @@
 <template>
 	<authLayout>
-		<h4 class="card-title">{{ $t('login.title') }}</h4>
-		<form class="my-login-validation">
-			<div class="form-group">
-				<label>{{ $t('fields.email') }}</label>
-				<input type="email" class="form-control" v-model="loginData.email" v-bind:class="{ 'border border-danger': errors.email }" autocomplete="on">
-			</div>
+		<div class="w-full flex flex-wrap">
+            <div class="w-full md:w-1/2 flex flex-col">
+				<div class="flex justify-center md:justify-start pt-12 md:pl-12 md:-mb-12">
+					<a href="#" class="bg-black text-white font-bold text-xl p-4">Logo</a>
+				</div>
 
-			<div class="form-group">
-				<label>{{ $t('fields.password') }}
-					<router-link :to="{ name: 'forgotPassword' }" class="float-right">{{ $t('forgot_password.title') }} ?</router-link>
-				</label>
-				<input type="password" class="form-control" v-model="loginData.password" v-bind:class="{ 'border border-danger': errors.password }">
-			</div>
-			
-			<div class="form-group m-0">
-				<button type="submit" class="btn btn-primary btn-block" v-on:click.prevent="login()">{{ $t('login.title') }}</button>
-			</div>
+                <div class="flex flex-col justify-center md:justify-start my-auto pt-8 md:pt-0 px-8 md:px-24 lg:px-32">
+                    <p class="text-center text-3xl">{{ $t('login.title') }}.</p>
+                    <form class="flex flex-col pt-3 md:pt-8" action="#" method="POST">
 
-			<div class="mt-4 text-center">{{ $t('login.create_acc_info') }} <router-link :to="{ name: 'register' }">{{ $t('create_one') }}</router-link></div>
-		</form>
+                        <div class="flex flex-col pt-4">
+                            <label for="email" class="text-lg">{{ $t('fields.email') }}</label>
+                            <input type="text" v-model="loginData.email" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mt-1 leading-tight focus:outline-none focus:shadow-outline" :class="{ 'border-pink-400': errors.email }">
+                        </div>
+
+                        <div class="flex flex-col pt-4">
+                            <label for="password" class="text-lg">{{ $t('fields.password') }}</label>
+                            <input type="password" v-model="loginData.password" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mt-1 leading-tight focus:outline-none focus:shadow-outline" :class="{ 'border-pink-400': errors.password }">
+                        </div>
+        
+                        <input v-on:click.prevent="login()" type="submit" value="Log In" class="bg-black text-white font-bold text-lg hover:bg-gray-700 p-2 mt-8 cursor-pointer">
+                    </form>
+
+					<div class="text-center pt-12 pb-12">
+						<p>{{ $t('login.create_acc_info') }} <router-link :to="{ name: 'register' }" class="underline font-semibold">{{ $t('create_one') }}</router-link>.</p>
+					</div>
+                </div>
+            </div>
+
+            <div class="w-1/2 shadow-2xl">
+                <img class="object-cover w-full h-screen hidden md:block" src="https://source.unsplash.com/IXUM4cJynP0">
+            </div>
+        </div>
 	</authLayout>
 </template>
 

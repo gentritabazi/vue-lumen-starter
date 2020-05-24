@@ -15,7 +15,7 @@ const adminLayout = () => import('./views/layouts/admin')
 Vue.component('authLayout', authLayout)
 Vue.component('adminLayout', adminLayout)
 
-// General Config
+// Config
 Vue.config.productionTip = false
 Vue.prototype.$backendUrl = process.env.VUE_APP_BACKEND_URL
 Vue.prototype.$appName = process.env.VUE_APP_NAME

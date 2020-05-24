@@ -11,12 +11,9 @@
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.13.0",
     "axios": "^0.19.0",
-    "bootstrap": "^4.4.1",
     "core-js": "^3.4.3",
     "crip-vue-notice": "^1.1.1",
-    "jquery": "^3.5.0",
     "js-cookie": "^2.2.1",
-    "popper.js": "^1.16.0",
     "vue": "^2.6.10",
     "vue-i18n": "^8.15.1",
     "vue-meta": "^2.3.1",
