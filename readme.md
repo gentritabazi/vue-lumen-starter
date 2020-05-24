@@ -3,7 +3,7 @@
 
 ### Screenshots
 ![Screenshot](https://i.imgur.com/TQFdYNI.png)
-![Screenshot](https://i.imgur.com/lxm7F5M.png)
+![Screenshot](https://i.imgur.com/cIIyCD0.png)
 
 ### Included
  * Vue Router
