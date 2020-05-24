@@ -8,7 +8,7 @@
         </form>
         <ul class="navbar-nav navbar-right">
             <li class="dropdown"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
-                <div class="d-sm-none d-lg-inline-block">{{ authUserName }}</div></a>
+                <div class="d-sm-none d-lg-inline-block">{{ authUser.first_name + ' ' + authUser.last_name }}</div></a>
                 <div class="dropdown-menu dropdown-menu-right">
                     <a href="#" class="dropdown-item has-icon">
                         <i class="far fa-user"></i> Profile
@@ -49,7 +49,8 @@ export default {
     props: ['activeMenu'],
     data() {
         return {
-            showLogoutModal: false
+            showLogoutModal: false,
+            authUser: this.$store.state.user
         }
     },
     methods: {
