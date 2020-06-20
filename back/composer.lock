@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "816a27d942fb7d6ebcf563d5929a76b3",
+    "content-hash": "1cc1393b5bfb6615ca50e63b8e61b33d",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -4113,6 +4113,41 @@
                 "laravel"
             ],
             "time": "2020-03-04T11:21:28+00:00"
+        },
+        {
+            "name": "urameshibr/lumen-form-request",
+            "version": "1.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/urameshibr/lumen-form-request.git",
+                "reference": "c540dbafed07fb71a6478478e8a4770ae7ff7105"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/urameshibr/lumen-form-request/zipball/c540dbafed07fb71a6478478e8a4770ae7ff7105",
+                "reference": "c540dbafed07fb71a6478478e8a4770ae7ff7105",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.6.4"
+            },
+            "type": "project",
+            "autoload": {
+                "psr-4": {
+                    "Urameshibr\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Laravel Form Request adaptation for Lumen framework.",
+            "keywords": [
+                "form",
+                "lumen",
+                "request"
+            ],
+            "time": "2018-10-18T00:07:29+00:00"
         },
         {
             "name": "vlucas/phpdotenv",

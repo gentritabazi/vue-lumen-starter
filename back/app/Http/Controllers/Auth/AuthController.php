@@ -2,34 +2,24 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use App\Models\Auth\User;
-use Illuminate\Support\Facades\Validator;
+// use Tymon\JWTAuth\JWTAuth;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
-use Tymon\JWTAuth\JWTAuth;
-use Illuminate\Support\Facades\Hash;
+use App\Http\Requests\Auth\LoginRequest;
+use App\Http\Requests\Auth\RegisterRequest;
 
 class AuthController extends Controller
 {
     /**
      * Get a JWT via given credentials.
      *
-     * @param Request $request
+     * @param  LoginRequest  $request
      * @return JSON
      */
-    public function login(Request $request)
+    public function login(LoginRequest $request)
     {
-        // Validate
-        $rules = array(
-            'email' => 'required',
-            'password' => 'required',
-        );
-        $validator = Validator::make($request->all(), $rules);
-        if ($validator->fails()) {
-            return response()->json(['errors' => $validator->errors()], 422);
-        }
-
         // Check
         $credentials = $request->only(['email', 'password']);
         if (!$token = Auth::attempt($credentials)) {
@@ -48,29 +38,13 @@ class AuthController extends Controller
     /**
      * Store a new user.
      *
-     * @param Request $request
+     * @param  RegisterRequest  $request
      * @return JSON
      */
-    public function register(Request $request)
+    public function register(RegisterRequest $request)
     {
-        // Validate
-        $rules = array(
-            'first_name' => 'required|between:1,20',
-            'last_name' => 'required|between:1,20',
-            'email' => 'required|unique:users,email|email',
-            'password' => 'required|between:6,255',
-        );
-        $validator = Validator::make($request->all(), $rules);
-        if ($validator->fails()) {
-            return response()->json(['errors' => $validator->errors()], 422);
-        }
-
         // Save to DB
-        $user = new User;
-        $user->first_name = $request->input('first_name');
-        $user->last_name = $request->input('last_name');
-        $user->email = $request->input('email');
-        $user->password = Hash::make($request->input('password'));
+        $user = new User($request->all());
         $user->save();
 
         // Final Response

@@ -8,7 +8,8 @@
         "php": "^7.2.5",
         "fruitcake/laravel-cors": "^1.0",
         "laravel/lumen-framework": "^7.0",
-        "tymon/jwt-auth": "dev-develop"
+        "tymon/jwt-auth": "dev-develop",
+        "urameshibr/lumen-form-request": "^1.5"
     },
     "require-dev": {
         "fzaninotto/faker": "^1.4",
