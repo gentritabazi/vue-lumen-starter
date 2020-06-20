@@ -12,32 +12,35 @@ use Tymon\JWTAuth\Contracts\JWTSubject;
 class User extends Model implements AuthenticatableContract, AuthorizableContract, JWTSubject
 {
     use Authenticatable, Authorizable;
-    public $timestamps = false;    
+
+    /**
+     * Indicates if the model should be timestamped.
+     *
+     * @var bool
+     */
+    public $timestamps = false;
 
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
-    protected $fillable = [
-        'first_name', 'last_name', 'email',
-    ];
+    protected $fillable = ['first_name', 'last_name', 'email', 'password', 'gender'];
 
     /**
      * The attributes excluded from the model's JSON form.
      *
      * @var array
      */
-    protected $hidden = [
-        'password',
-    ];
+    protected $hidden = ['password'];
 
     /**
      * Get the identifier that will be stored in the subject claim of the JWT.
      *
      * @return mixed
      */
-    public function getJWTIdentifier() {
+    public function getJWTIdentifier()
+    {
         return $this->getKey();
     }
 
@@ -46,7 +49,8 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
      *
      * @return array
      */
-    public function getJWTCustomClaims() {
+    public function getJWTCustomClaims()
+    {
         return [];
     }
 
@@ -54,8 +58,17 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
      * Get User full name.
      *
      * @return array
-     */ 
-    public function getName() {
+     */
+    public function getName()
+    {
         return $this->first_name. ' '. $this->last_name;
+    }
+
+    /**
+     * Define setter for the password field.
+     */
+    public function setPasswordAttribute($value)
+    {
+        $this->attributes['password'] = app('hash')->make($value);
     }
 }
