@@ -14,8 +14,8 @@
 */
 
 // Auth
-$router->post('login', 'Auth\AuthController@login');
-$router->post('register', 'Auth\AuthController@register');
+$router->post('login', 'Auth\LoginController@login');
+$router->post('register', 'Auth\RegisterController@register');
 
 // Hello World
 $router->get('hello-world', ['middleware' => 'auth'], function () {
