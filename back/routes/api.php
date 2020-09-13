@@ -17,7 +17,7 @@
 $router->post('login', 'Auth\LoginController@login');
 $router->post('register', 'Auth\RegisterController@register');
 
-// Hello World
-$router->get('hello-world', ['middleware' => 'auth'], function () {
-    return 'hello world';
+// Default route
+$router->get('/', ['middleware' => 'auth'], function () {
+    return 'Hello world';
 });
