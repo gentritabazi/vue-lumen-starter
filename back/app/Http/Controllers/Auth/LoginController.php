@@ -23,12 +23,16 @@ class LoginController extends Controller
             return response()->json(['errors' => ['login' => [__('auth.failed')]]], 422);
         }
 
-        // Final Response
-        return response()->json([
-            'user' => Auth::user(),
+        // Data
+        $data = [
             'token' => $token,
             'token_type' => 'bearer',
             'expires_in' => Auth::factory()->getTTL() * 60
-        ], 200);
+        ];
+        $user = Auth::user()->toArray();
+        $data = array_merge($data, $user);
+
+        // Final Response
+        return response()->json($data, 200);
     }
 }

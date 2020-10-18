@@ -1,3 +1,5 @@
+import httpAxios from '@/httpAxios.js'
+
 export default {
     name: 'Register-Module',
 	metaInfo: function() {
@@ -24,7 +26,7 @@ export default {
     methods: {
         // Store a new user
         register: function() {
-            var self = this
+            const self = this
 
             // Clear Errors
             Object.keys(self.errors).forEach(function(key) {
@@ -32,47 +34,40 @@ export default {
             })
             
             // Ajax Request
-			this.$http.post(this.$backendUrl + 'register', self.registerData)
-			.then(function(response) {
+            httpAxios({
+                url: this.$backendUrl + '/register',
+                method: 'POST',
+                data: self.registerData
+            })
+			.then(response => {
 				Object.keys(self.registerData).forEach(function(key) {
                     self.registerData[key] = ''
                 })
 
-                self.$notice['success']({
-					title: self.$t('success'),
-					description: self.$t(String(response.data.message))
+                self.$notify({
+                    group: 'notify',
+                    type: 'success',
+                    title: self.$t('general.success'),
+                    text: 'The process was successfully completed'
                 })
-
+                
                 setTimeout(() => self.$router.push({ name: 'login' }), 3000)
-            })
-            .catch(function(error) {
-                var errors = error
 
+                console.log(response)
+            })
+            .catch(error => {
                 try {
-                    if(error.response.status == 422) {
-                        errors = '';
+                    console.log(error)
+					if(error.response.status == 422) {
 						for(var errorKey in error.response.data.errors) {
-                            if(errorKey in self.errors) {
+							if(errorKey in self.errors) {
                                 self.errors[errorKey] = true
                             }
-
-							for(var i = 0; i < error.response.data.errors[errorKey].length; i++) {
-								errors += (String(error.response.data.errors[errorKey][i])) + '<br>'
-							}
 						}
-                    }
-
-                    if(error.response.status == 500) {
-                        errors = error.response.data.message
-                    }
-                } catch(e) {
+					}
+				} catch(e) {
 					console.log(e)
 				}
-
-				self.$notice['error']({
-					title: self.$t('error'),
-					description: String(errors)
-				})
             });
         }
 	},

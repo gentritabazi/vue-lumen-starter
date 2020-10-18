@@ -8,8 +8,8 @@ export default {
     },
     methods: {
         logout: function() {
-            this.$store.commit('LOGOUT_USER')
-            this.$router.push({ name: 'login' })
+            this.$store.dispatch('logOut')
+			this.$router.push({ name: 'login' })
         },
     }
 }
