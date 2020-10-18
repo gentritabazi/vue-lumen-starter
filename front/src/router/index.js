@@ -1,6 +1,6 @@
 // Import
 import Vue from 'vue'
-import store from 'srcFolder/store'
+import store from '@/store'
 import VueRouter from 'vue-router'
 import routes from './routes'
 
