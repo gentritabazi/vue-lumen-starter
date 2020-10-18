@@ -31,7 +31,7 @@ class RegisterRequest extends FormRequest
             'last_name' => 'required|between:1,20',
             'email' => 'required|unique:App\Models\Auth\User,email|email',
             'password' => 'required|between:6,255',
-            'gender' => 'required|in:m,f'
+            'gender' => 'in:m,f'
         ];
     }
 

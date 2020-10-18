@@ -14,7 +14,7 @@
  * Vue Meta
  * Tailwind
  * Font Awesome 5
- * Form Request
+ * Lumen Form Request
  * JWT
 
 ### Features
@@ -41,9 +41,6 @@
 ### Credits
 * Tailwind Admin Template (https://github.com/davidgrzyb/tailwind-admin-template)
 * Tailwind Login & Register Template (https://github.com/davidgrzyb/tailwind-auth-template)
-* Form Request (https://github.com/urameshibr/lumen-form-request)
-* Cors (https://github.com/fruitcake/laravel-cors)
-* JWT Auth (https://github.com/tymondesigns/jwt-auth)
 
 ### Author
 * Name: **Gentrit Abazi**

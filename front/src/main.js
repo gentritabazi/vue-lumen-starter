@@ -1,17 +1,15 @@
 // Import
 import Vue from 'vue'
 import App from './App.vue'
-import axios from 'axios'
 import router from './router'
-import i18n from './plugins/i18n'
-import CripNotice from 'crip-vue-notice'
-import generalFunc from 'srcFolder/functions/general'
+import i18n from './locales'
 import VueMeta from 'vue-meta'
 import store from './store'
+import Notifications from 'vue-notification'
 
 // Register layouts
-const authLayout = () => import('./views/layouts/auth')
-const adminLayout = () => import('./views/layouts/admin')
+const authLayout = () => import('./layouts/auth')
+const adminLayout = () => import('./layouts/admin')
 Vue.component('authLayout', authLayout)
 Vue.component('adminLayout', adminLayout)
 
@@ -19,13 +17,8 @@ Vue.component('adminLayout', adminLayout)
 Vue.config.productionTip = false
 Vue.prototype.$backendUrl = process.env.VUE_APP_BACKEND_URL
 Vue.prototype.$appName = process.env.VUE_APP_NAME
-Vue.mixin(generalFunc)
-Vue.use(CripNotice)
+Vue.use(Notifications)
 Vue.use(VueMeta)
-if(store.getters.isLogged) {
-    axios.defaults.headers.common['Authorization'] = 'Bearer ' + store.state.token
-}
-Vue.prototype.$http = axios
 
 // Start Vue Js
 new Vue({
