@@ -9,8 +9,8 @@ import VueMeta from 'vue-meta'
 import store from './store'
 
 // Register layouts
-const authLayout = () => import('./views/layouts/auth')
-const adminLayout = () => import('./views/layouts/admin')
+const authLayout = () => import('./layouts/auth')
+const adminLayout = () => import('./layouts/admin')
 Vue.component('authLayout', authLayout)
 Vue.component('adminLayout', adminLayout)
 

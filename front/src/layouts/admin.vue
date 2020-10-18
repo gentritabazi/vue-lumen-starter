@@ -15,14 +15,12 @@
 </template>
 
 <script>
-// Css
 import '@fortawesome/fontawesome-free/css/all.min.css'
-
-// Components
 import sidebarComponent from '@/components/SidebarComponent'
 import navbarComponent from '@/components/NavbarComponent'
 
 export default {
+    name: 'Admin-Layout',
     props: ['activeMenu'],
     components: {
         sidebarComponent,
