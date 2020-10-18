@@ -5,7 +5,6 @@ import axios from 'axios'
 import router from './router'
 import i18n from './locales'
 import CripNotice from 'crip-vue-notice'
-import generalFunc from 'srcFolder/functions/general'
 import VueMeta from 'vue-meta'
 import store from './store'
 
@@ -19,7 +18,6 @@ Vue.component('adminLayout', adminLayout)
 Vue.config.productionTip = false
 Vue.prototype.$backendUrl = process.env.VUE_APP_BACKEND_URL
 Vue.prototype.$appName = process.env.VUE_APP_NAME
-Vue.mixin(generalFunc)
 Vue.use(CripNotice)
 Vue.use(VueMeta)
 if(store.getters.isLogged) {
