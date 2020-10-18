@@ -44,9 +44,6 @@ service.interceptors.response.use(response => {
         // Errors from backend
         if (error.response.status == 422) {
             errors = ''
-            // for (var errorKey in error.response.data.errors) {
-            //     errors += error.response.data.errors[errorKey].detail + '<br>'
-            // }
 
             for(var errorKey in error.response.data.errors) {
                 for(var i = 0; i < error.response.data.errors[errorKey].length; i++) {
