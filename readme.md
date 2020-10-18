@@ -9,7 +9,7 @@
  * Vue Router
  * Vuex
  * Axios
- * Vue CripNotice
+ * Vue Notification
  * Vue I18n
  * Vue Meta
  * Tailwind
@@ -27,6 +27,9 @@
 * Authentication with JWT
 * Validation (FrontEnd & BackEnd)
 * Tailwind Admin & Auth Templates
+* Auto-Logout after access token expired
+* Auto-Send access token with axios
+* Auto-Loader for every request with axios
 
 ### Installation
 * Clone the repo: ``git clone https://github.com/gentritabazi01/Vue-Lumen-Starter.git`` to your local path.
