@@ -3,7 +3,6 @@
 namespace App\Providers;
 
 use App\User;
-use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\ServiceProvider;
 
 class AuthServiceProvider extends ServiceProvider
@@ -31,7 +30,7 @@ class AuthServiceProvider extends ServiceProvider
         // the User instance via an API token or any other method necessary.
 
         $this->app['auth']->viaRequest('api', function ($request) {
-            if($request->input('email')) {
+            if ($request->input('email')) {
                 return User::where('email', $request->input('email'))->first();
             }
         });

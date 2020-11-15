@@ -1,6 +1,8 @@
 <?php
 
-namespace App\Events;
+namespace Modules\Users\Events;
+
+use App\Events\Event;
 
 class ExampleEvent extends Event
 {

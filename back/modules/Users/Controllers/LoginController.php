@@ -1,11 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace Modules\Users\Controllers;
 
-use App\Models\Auth\User;
-use App\Http\Controllers\Controller;
+use App\Http\Controller;
 use Illuminate\Support\Facades\Auth;
-use App\Http\Requests\Auth\LoginRequest;
+use Modules\Users\Requests\LoginRequest;
 
 class LoginController extends Controller
 {
@@ -33,6 +32,6 @@ class LoginController extends Controller
         $data = array_merge($data, $user);
 
         // Final Response
-        return response()->json($data, 200);
+        return $this->response($data);
     }
 }

@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace Modules\Users\Controllers;
 
-use App\Models\Auth\User;
-use App\Http\Controllers\Controller;
-use App\Http\Requests\Auth\RegisterRequest;
+use App\Http\Controller;
+use Modules\Users\Models\User;
+use Modules\Users\Requests\RegisterRequest;
 
 class RegisterController extends Controller
 {
@@ -21,6 +21,6 @@ class RegisterController extends Controller
         $user->save();
 
         // Final Response
-        return response()->json(['message' => __('general_words.process_success')], 201);
+        return $this->response(['message' => __('general_words.process_success')], 201);
     }
 }
