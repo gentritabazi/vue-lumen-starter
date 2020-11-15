@@ -97,23 +97,7 @@ $app->register(App\Providers\EventServiceProvider::class);
 $app->register(\Tymon\JWTAuth\Providers\LumenServiceProvider::class);
 $app->register(Fruitcake\Cors\CorsServiceProvider::class);
 $app->register(Urameshibr\Providers\FormRequestServiceProvider::class);
+$app->register(Modules\Users\Providers\UserServiceProvider::class);
 
-/*
-|--------------------------------------------------------------------------
-| Load The Application Routes
-|--------------------------------------------------------------------------
-|
-| Next we will include the routes file so that they can all be added to
-| the application. This will provide all of the URLs the application
-| can respond to, as well as the controllers that may handle them.
-|
-*/
-
-$app->router->group([
-    'prefix' => 'api',
-    'namespace' => 'App\Http\Controllers',
-], function ($router) {
-    require __DIR__.'/../routes/api.php';
-});
-
+// Run app!
 return $app;

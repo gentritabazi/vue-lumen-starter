@@ -1,6 +1,8 @@
 <?php
 
-namespace App\Jobs;
+namespace Modules\Users\Jobs;
+
+use App\Jobs\Job;
 
 class ExampleJob extends Job
 {
