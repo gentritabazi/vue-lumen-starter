@@ -32,12 +32,12 @@
 * Auto-Loader for every request with axios
 
 ### Installation
+* Make sure you have **npm** and **composer** installed in your machine.
 * Clone the repo: ``git clone https://github.com/gentritabazi01/Vue-Lumen-Starter.git`` to your local path.
-* Make sure you have **npm** installed to your machine.
 * Navigate to {PROJECT-PATH}/back where {PROJECT-PATH} is the path where you cloned project.
-* Run ``copy .env.example .env`` and after file .env is copied you need to start to edit database configuration into `.env` file.
+* Run ``copy .env.example .env`` and after file `.env` is copied you need to set database credentials into `.env` file.
 * Run ``php artisan migrate`` and ``php artisan jwt:secret``.
-* Navigate to {PROJECT-PATH}/front  and Run ``copy .env.example .env``.
+* Navigate to {PROJECT-PATH}/front and run ``copy .env.example .env``.
 * Run: ``npm install``.
 * Run: ``npm run serve``.
 
