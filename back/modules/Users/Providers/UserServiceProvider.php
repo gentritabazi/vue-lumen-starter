@@ -25,7 +25,7 @@ class UserServiceProvider extends ServiceProvider
     public function boot()
     {
         Route::group([
-            'prefix' => null,
+            'prefix' => 'api',
             'namespace' => 'Modules\Users\Controllers',
             'middleware' => null,
         ], function () {
