@@ -1,32 +1,35 @@
 <template>
-    <div id="app">
-        <loader-component v-if="displayLoader"/>
+  <div id="app">
+    <loader-component v-if="displayLoader" />
 
-        <notifications group="notify" class="notify"/>
+    <notifications group="notify" class="notify" />
 
-        <router-view/>
-    </div>
+    <router-view />
+  </div>
 </template>
 
 <script>
-import loaderComponent from '@/components/LoaderComponent'
-import { mapGetters } from 'vuex'
+import loaderComponent from '@/components/LoaderComponent';
+import { mapGetters } from 'vuex';
 
 export default {
-    name: 'App',
-    components: {
-        loaderComponent
-    },
-    computed: {
-        ...mapGetters({
-            displayLoader: 'getDisplayLoader'
-        })
-    },
-    metaInfo () {
-        return {
-            title: this.$appName,
-            titleTemplate: `%s - ` + this.$appName
-        }
-    },
-}
+  name: 'App',
+
+  metaInfo() {
+    return {
+      title: this.$appName,
+      titleTemplate: `%s - ` + this.$appName,
+    };
+  },
+
+  components: {
+    loaderComponent,
+  },
+
+  computed: {
+    ...mapGetters({
+      displayLoader: 'getDisplayLoader',
+    }),
+  },
+};
 </script>

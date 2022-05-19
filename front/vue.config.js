@@ -1,4 +1,3 @@
-var path = require('path')
 module.exports = {
     pluginOptions: {
         i18n: {
@@ -9,3 +8,4 @@ module.exports = {
         }
     }
 }
+ 

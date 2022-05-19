@@ -1,16 +1,16 @@
 {
-  "name": "test",
-  "version": "0.1.0",
+  "name": "myapp",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "i18n:report": "vue-cli-service i18n:report --src './src/**/*.?(js|vue)' --locales './src/locales/**/*.json'"
+    "code:format": "prettier --write \"src/**/*.{ts,css,vue,js,html}\""
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.13.0",
-    "axios": "^0.21.1",
+    "axios": "^0.21.4",
     "core-js": "^3.4.3",
     "crip-vue-notice": "^1.1.1",
     "js-cookie": "^2.2.1",
@@ -29,7 +29,8 @@
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
     "vue-cli-plugin-i18n": "^0.6.0",
-    "vue-template-compiler": "^2.6.10"
+    "vue-template-compiler": "^2.6.10",
+    "prettier": "^2.6.2"
   },
   "eslintConfig": {
     "root": true,

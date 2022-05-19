@@ -1,20 +1,20 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
+import Vue from 'vue';
+import Vuex from 'vuex';
 
-Vue.use(Vuex)
+Vue.use(Vuex);
 
-import actions from './actions'
-import getters from './getters'
-import mutations from './mutations'
+import actions from './actions';
+import getters from './getters';
+import mutations from './mutations';
 
 const state = {
-	displayLoader: false,
-	loggedUser: localStorage.getItem('loggedUser') || null
-}
+  displayLoader: false,
+  loggedUser: localStorage.getItem('loggedUser') || null,
+};
 
 export default new Vuex.Store({
-	state,
-	actions,
-	getters,
-	mutations
-})
+  state,
+  actions,
+  getters,
+  mutations,
+});

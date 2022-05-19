@@ -1,77 +1,83 @@
 // Import
-import axios from 'axios'
-import store from './store'
-import Vue from 'vue'
+import axios from 'axios';
+import store from './store';
+import Vue from 'vue';
 
 // Create
 const service = axios.create({
-    baseURL: ''
-})
+  baseURL: '',
+});
 
 // Token
 if (store.getters.getLoggedUser) {
-    service.defaults.headers.common['Authorization'] = 'Bearer ' + store.getters.getLoggedUser.access_token
+  service.defaults.headers.common['Authorization'] = 'Bearer ' + store.getters.getLoggedUser.access_token;
 }
 
 // Request Interceptor
-service.interceptors.request.use(config => {
-    store.dispatch('displayLoader', true)
+service.interceptors.request.use(
+  (config) => {
+    store.dispatch('displayLoader', true);
 
-    return config
-}, error => {
-    store.dispatch('displayLoader', false)
+    return config;
+  },
+  (error) => {
+    store.dispatch('displayLoader', false);
 
-    return Promise.reject(error)
-})
+    return Promise.reject(error);
+  },
+);
 
 // Response Interceptor
-service.interceptors.response.use(response => {
-    store.dispatch('displayLoader', false)
+service.interceptors.response.use(
+  (response) => {
+    store.dispatch('displayLoader', false);
 
-    return response
-}, error => {
-    store.dispatch('displayLoader', false)
+    return response;
+  },
+  (error) => {
+    store.dispatch('displayLoader', false);
 
-    var errors = error
+    var errors = error;
 
     if (error.response) {
-        // Session Expired
-        if (401 === error.response.status) {
-            errors = error.response.data.message
-            store.dispatch('logOut')
-        }
+      // Session Expired
+      if (401 === error.response.status) {
+        errors = error.response.data.message;
+        store.dispatch('logOut');
+      }
 
-        // Errors from backend
-        if (error.response.status == 422) {
-            errors = ''
+      // Errors from backend
+      if (error.response.status == 422) {
+        errors = '';
 
-            for(var errorKey in error.response.data.errors) {
-                for(var i = 0; i < error.response.data.errors[errorKey].length; i++) {
-                    errors += (String(error.response.data.errors[errorKey][i])) + '<br>'
-                }
-            }
+        for (var errorKey in error.response.data.errors) {
+          for (var i = 0; i < error.response.data.errors[errorKey].length; i++) {
+            errors += String(error.response.data.errors[errorKey][i]) + '<br>';
+          }
         }
+      }
 
-        // Backend error
-        if (500 === error.response.status) {
-            errors = error.response.data.message
-        }
+      // Backend error
+      if (500 === error.response.status) {
+        errors = error.response.data.message;
+      }
 
-        // 404
-        if (error.response.status == 404) {
-            errors = 'Page not found'
-        }
+      // 404
+      if (error.response.status == 404) {
+        errors = 'Page not found';
+      }
     }
 
     Vue.notify({
-        group: 'notify',
-        type: 'error',
-        title: 'Error',
-        text: String(errors),
-    })
+      group: 'notify',
+      type: 'error',
+      title: 'Error',
+      text: String(errors),
+    });
 
-    return Promise.reject(error)
-})
+    return Promise.reject(error);
+  },
+);
 
 // Export axios
-export default service
+export default service;

@@ -1,8 +1,9 @@
 export default {
-    name: 'Dashboard-Module',
-	metaInfo: function() {
-		return {
-			title: this.$t('navbar.dashboard'),
-		}
-	}
-}
+  name: 'DashboardModule',
+
+  metaInfo: function () {
+    return {
+      title: this.$t('navbar.dashboard'),
+    };
+  },
+};

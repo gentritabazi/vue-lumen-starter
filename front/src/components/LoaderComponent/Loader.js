@@ -1,3 +1,3 @@
 export default {
-    'name': 'Loader-Component',
-}
+  name: 'LoaderComponent',
+};

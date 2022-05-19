@@ -1,4 +1,5 @@
 export default {
-    name: 'Sidebar-Component',
-    props: ['activeMenu']
-}
+  name: 'SidebarComponent',
+
+  props: ['activeMenu'],
+};
