@@ -1,5 +1,6 @@
-### Introduction
-**Vue Lumen Starter** offers to you to connect to the **Lumen (PHP Micro-Framework By Laravel)** through the api using **Vue.js**.
+# Introduction
+
+This project is a starter with a set of packages/components that helps you work with Lumen and VueJS.
 
 ### Screenshots
 ![Screenshot](https://i.imgur.com/TQFdYNI.png)
@@ -33,7 +34,7 @@
 
 ### Installation
 * Make sure you have **npm** and **composer** installed in your machine.
-* Clone the repo: ``git clone https://github.com/gentritabazi01/Vue-Lumen-Starter.git`` to your local path.
+* Clone the repo to your local path.
 * Navigate to {PROJECT-PATH}/back where {PROJECT-PATH} is the path where you cloned project.
 * Run `copy .env.example .env` and after file `.env` is copied you need to set database credentials into `.env` file.
 * Run `composer install` to install dependencies.
