@@ -96,7 +96,7 @@ $app->register(App\Providers\AuthServiceProvider::class);
 $app->register(App\Providers\EventServiceProvider::class);
 $app->register(\Tymon\JWTAuth\Providers\LumenServiceProvider::class);
 $app->register(Fruitcake\Cors\CorsServiceProvider::class);
-$app->register(Urameshibr\Providers\FormRequestServiceProvider::class);
+$app->register(Urameshibr\Providers\LumenFormRequestServiceProvider::class);
 $app->register(Modules\Users\Providers\UserServiceProvider::class);
 
 // Run app!
