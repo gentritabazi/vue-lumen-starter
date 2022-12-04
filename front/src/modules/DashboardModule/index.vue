@@ -1,2 +1,12 @@
 <template src="./Dashboard.html"></template>
-<script src="./Dashboard.js"></script>
+<script>
+export default {
+  name: 'DashboardModule',
+
+  metaInfo: function () {
+    return {
+      title: this.$t('navbar.dashboard'),
+    };
+  },
+};
+</script>

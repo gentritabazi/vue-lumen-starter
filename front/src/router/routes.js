@@ -9,7 +9,9 @@ export default [
   { path: '/', redirect: '/login' },
 
   // Errors
-  { path: '*', component: error404Module },
+  { path: '/:pathMatch(.*)*', name: 'not-found', component: error404Module },
+  // if you omit the last `*`, the `/` character in params will be encoded when resolving or pushing
+  { path: '/:pathMatch(.*)', name: 'bad-not-found', component: error404Module },
 
   // Auth
   { path: '/login', name: 'login', component: loginModule, meta: { guest: true } },

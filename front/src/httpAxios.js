@@ -1,27 +1,29 @@
 // Import
 import axios from 'axios';
-import store from './store';
-import Vue from 'vue';
+import { useStore } from '@/store';
+import { notify } from '@kyvg/vue3-notification';
 
 // Create
 const service = axios.create({
   baseURL: '',
 });
 
-// Token
-if (store.getters.getLoggedUser) {
-  service.defaults.headers.common['Authorization'] = 'Bearer ' + store.getters.getLoggedUser.access_token;
-}
-
 // Request Interceptor
 service.interceptors.request.use(
   (config) => {
-    store.dispatch('displayLoader', true);
+    const store = useStore();
+    store.setDisplayLoader(true);
+
+    // Token
+    if (store.getLoggedUser) {
+      config.headers.common['Authorization'] = 'Bearer ' + store.getLoggedUser.access_token;
+    }
 
     return config;
   },
   (error) => {
-    store.dispatch('displayLoader', false);
+    const store = useStore();
+    store.setDisplayLoader(false);
 
     return Promise.reject(error);
   },
@@ -30,12 +32,14 @@ service.interceptors.request.use(
 // Response Interceptor
 service.interceptors.response.use(
   (response) => {
-    store.dispatch('displayLoader', false);
+    const store = useStore();
+    store.setDisplayLoader(false);
 
     return response;
   },
   (error) => {
-    store.dispatch('displayLoader', false);
+    const store = useStore();
+    store.setDisplayLoader(false);
 
     var errors = error;
 
@@ -43,7 +47,7 @@ service.interceptors.response.use(
       // Session Expired
       if (401 === error.response.status) {
         errors = error.response.data.message;
-        store.dispatch('logOut');
+        store.logOut();
       }
 
       // Errors from backend
@@ -68,7 +72,7 @@ service.interceptors.response.use(
       }
     }
 
-    Vue.notify({
+    notify({
       group: 'notify',
       type: 'error',
       title: 'Error',

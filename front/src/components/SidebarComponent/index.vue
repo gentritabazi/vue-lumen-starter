@@ -1,2 +1,8 @@
 <template src="./Sidebar.html"></template>
-<script src="./Sidebar.js"></script>
+<script>
+export default {
+  name: 'SidebarComponent',
+
+  props: ['activeMenu'],
+};
+</script>

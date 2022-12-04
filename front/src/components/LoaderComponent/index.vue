@@ -1,3 +1,7 @@
 <template src="./Loader.html"></template>
-<script src="./Loader.js"></script>
+<script>
+export default {
+  name: 'LoaderComponent',
+};
+</script>
 <style src="./Loader.css" scoped></style>

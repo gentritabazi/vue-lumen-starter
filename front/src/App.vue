@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <loader-component v-if="displayLoader" />
+    <loader-component v-if="store.getDisplayLoader" />
 
-    <notifications group="notify" class="notify" />
+    <Notifications group="notify" class="notify" />
 
     <router-view />
   </div>
@@ -10,10 +10,16 @@
 
 <script>
 import loaderComponent from '@/components/LoaderComponent';
-import { mapGetters } from 'vuex';
+import { useStore } from '@/store';
 
 export default {
   name: 'App',
+
+  setup() {
+    return {
+      store: useStore(),
+    };
+  },
 
   metaInfo() {
     return {
@@ -24,12 +30,6 @@ export default {
 
   components: {
     loaderComponent,
-  },
-
-  computed: {
-    ...mapGetters({
-      displayLoader: 'getDisplayLoader',
-    }),
   },
 };
 </script>

@@ -1,18 +1,18 @@
 // Import
-import Vue from 'vue';
-import store from '@/store';
-import VueRouter from 'vue-router';
+import { useStore } from '@/store';
+import { createRouter, createWebHistory } from 'vue-router';
 import routes from './routes';
 
-Vue.use(VueRouter);
-
-const router = new VueRouter({
+const router = createRouter({
   mode: 'history',
+  history: createWebHistory(),
   routes,
 });
 
 // Middlewares
 router.beforeEach((to, from, next) => {
+  const store = useStore();
+
   // Redirect to route
   let redirectToRoute = function (name) {
     if (name === from.name) {
@@ -24,13 +24,13 @@ router.beforeEach((to, from, next) => {
   };
 
   // Get logged user
-  let loggedUser = store.getters.getLoggedUser;
+  let loggedUser = store.getLoggedUser;
 
   // Check if access token expired
   if (loggedUser) {
     let currentDateTime = new Date().getTime();
     if (currentDateTime > loggedUser.expiryDate) {
-      store.dispatch('logOut');
+      store.logOut();
       return redirectToRoute('login');
     }
   }

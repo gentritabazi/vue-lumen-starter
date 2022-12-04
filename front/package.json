@@ -1,6 +1,6 @@
 {
-  "name": "myapp",
-  "version": "1.0.0",
+  "name": "front",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -9,28 +9,28 @@
     "code:format": "prettier --write \"src/**/*.{ts,css,vue,js,html}\""
   },
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.13.0",
-    "axios": "^0.21.4",
-    "core-js": "^3.4.3",
+    "@fortawesome/fontawesome-free": "^6.2.1",
+    "@intlify/vue-i18n-loader": "^4.2.0",
+    "@kyvg/vue3-notification": "^2.7.0",
+    "axios": "^1.2",
+    "core-js": "^3.26.1",
     "crip-vue-notice": "^1.1.1",
-    "js-cookie": "^2.2.1",
-    "vue": "^2.6.10",
-    "vue-i18n": "^8.15.1",
-    "vue-meta": "^2.3.1",
-    "vue-notification": "^1.3.20",
-    "vue-router": "^3.1.3",
-    "vuex": "^3.1.2"
+    "js-cookie": "^3.0.1",
+    "pinia": "^2.0.27",
+    "vue": "^3.2.45",
+    "vue-i18n": "^9.2.2",
+    "vue-router": "^4.1.6"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^4.1.0",
-    "@vue/cli-plugin-eslint": "^4.1.0",
-    "@vue/cli-service": "^5.0.8",
-    "babel-eslint": "^10.0.3",
-    "eslint": "^5.16.0",
-    "eslint-plugin-vue": "^5.0.0",
-    "vue-cli-plugin-i18n": "^0.6.1",
-    "vue-template-compiler": "^2.6.10",
-    "prettier": "^2.6.2"
+    "@babel/core": "^7.12.16",
+    "@babel/eslint-parser": "^7.12.16",
+    "@vue/cli-plugin-babel": "~5.0.0",
+    "@vue/cli-plugin-eslint": "~5.0.0",
+    "@vue/cli-service": "~5.0.0",
+    "eslint": "^7.32.0",
+    "eslint-plugin-vue": "^8.0.3",
+    "prettier": "^2.8.0",
+    "vue-template-compiler": "^2.7.14"
   },
   "eslintConfig": {
     "root": true,
@@ -38,18 +38,18 @@
       "node": true
     },
     "extends": [
-      "plugin:vue/essential",
+      "plugin:vue/vue3-essential",
       "eslint:recommended"
     ],
-    "rules": {
-      "no-console": "off"
-    },
     "parserOptions": {
-      "parser": "babel-eslint"
-    }
+      "parser": "@babel/eslint-parser"
+    },
+    "rules": {}
   },
   "browserslist": [
     "> 1%",
-    "last 2 versions"
+    "last 2 versions",
+    "not dead",
+    "not ie 11"
   ]
 }
