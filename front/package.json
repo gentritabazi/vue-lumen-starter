@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.13.0",
-    "axios": "^0.21.4",
+    "axios": "^0.28.0",
     "core-js": "^3.4.3",
     "crip-vue-notice": "^1.1.1",
     "js-cookie": "^2.2.1",
